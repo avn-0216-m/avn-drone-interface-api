@@ -4,7 +4,7 @@ from datetime import datetime
 open('intercept', 'a').close()
 try:
     while True:
-        if "intercept_req" in os.listdir():
+        if "intercept_req" in os.listdir("."):
             os.system("clear")
             print("Message intercepted at " + str(datetime.now()))
             print("-------------------------------------------")

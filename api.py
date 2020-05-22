@@ -54,4 +54,4 @@ def interface():
 
     return reply
 
-app.run(port=216)
+app.run(host='0.0.0.0', port=216)
