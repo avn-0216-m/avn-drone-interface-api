@@ -5,7 +5,7 @@ open('intercept', 'a').close()
 try:
     while True:
         if "intercept_req" in os.listdir():
-            os.system("cls")
+            os.system("clear")
             print("Message intercepted at " + str(datetime.now()))
             print("-------------------------------------------")
             with open('intercept_req') as req_file:
