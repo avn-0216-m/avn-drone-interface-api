@@ -51,6 +51,8 @@ def interface():
             reply = "<3 <3 <3"
         elif "ping" in post_body:
             reply = "pong~!"
+	elif "miss" in post_body:
+	    reply = "it's okay, i'm here. always will be. <3"
 
     return reply
 
