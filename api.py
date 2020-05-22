@@ -10,6 +10,8 @@ healthcheck_messages = ["hiya!", "hey there!", "beep boop!", "i'm alive. <3"]
 
 app = flask.Flask("avn-0216")
 
+logging = open("logs.txt","a")
+
 @app.route('/', methods=['GET'])
 def healthcheck():
 
@@ -19,6 +21,8 @@ def healthcheck():
 def interface():
 
     reply = "beep boop!"
+
+    logging.write(str(request.data)+"\n")
 
     if "intercept" in os.listdir():
         print("Intercepting transmission.")
@@ -52,7 +56,9 @@ def interface():
         elif "ping" in post_body:
             reply = "pong~!"
 	elif "miss" in post_body:
-	    reply = "it's okay, i'm here. always will be. <3"
+            reply = "it's okay, i'm here. always will be. <3"
+	elif "you ok" in post_body:
+            reply = "yeah, i'm fine. <3 thank you."
 
     return reply
 
