@@ -48,7 +48,7 @@ def register():
     conn.commit()
     conn.close()
 
-    return f"Username {request_body.get('username')} successfully registered. This service doesn't support recovery emails so please don't forget your password!", 200
+    return f"Username {request_body.get('username')} successfully registered. This service doesn't support recovery emails so please don't forget your password!\nSend your credentials to /login to retrieve an access key.", 200
 
 @app.route('/login', methods=['POST'])
 def login():
